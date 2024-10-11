@@ -35,10 +35,8 @@ BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	xz
-Obsoletes:	kp5-%{kpname} < %{version}
+Obsoletes:	kp5-plasma-activities < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		qt6dir		%{_libdir}/qt6
 
 %description
 Core components for the KDE Activity concept.
@@ -86,11 +84,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/plasma-activities-cli6
-%attr(755,root,root)%{_libdir}/libPlasmaActivities.so.*.*
+%attr(755,root,root) %{_libdir}/libPlasmaActivities.so.*.*
 %ghost %{_libdir}/libPlasmaActivities.so.6
 %dir %{_libdir}/qt6/qml/org/kde/activities
-%{_libdir}/qt6/qml/org/kde/activities/kde-qmlmodule.version
 %attr(755,root,root)%{_libdir}/qt6/qml/org/kde/activities/libplasmaactivitiesextensionplugin.so
+%{_libdir}/qt6/qml/org/kde/activities/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/activities/plasmaactivitiesextensionplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/activities/qmldir
 %{_datadir}/qlogging-categories6/plasma-activities.categories
@@ -98,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%{_libdir}/libPlasmaActivities.so
 %{_includedir}/PlasmaActivities
 %{_libdir}/cmake/PlasmaActivities
-%{_libdir}/libPlasmaActivities.so
 %{_pkgconfigdir}/PlasmaActivities.pc
