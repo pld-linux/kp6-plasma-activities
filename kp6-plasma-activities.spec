@@ -33,7 +33,7 @@ BuildRequires:	kf6-kservice-devel >= 5.85.0
 BuildRequires:	kf6-solid-devel >= 5.85.0
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	xz
 Obsoletes:	kp5-%{kpname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
