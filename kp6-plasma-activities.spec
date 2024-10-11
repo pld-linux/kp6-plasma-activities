@@ -3,9 +3,9 @@
 %bcond_with	tests		# test suite
 
 %define		kdeplasmaver	6.2.0
-%define		qtver		5.15.2
+%define		qt_ver		6.7.0
+%define		kf_ver		6.5.0
 %define		kpname		plasma-activities
-%define		kf6ver		5.39.0
 
 Summary:	Plasma KActivities components
 Summary(pl.UTF-8):	Komponenty Plazmy KActivities
@@ -17,20 +17,21 @@ Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	843caaccebd770a8fd0a9e53701f5476
 URL:		https://kde.org/
-BuildRequires:	Qt6Core-devel >= 5.15.0
-BuildRequires:	Qt6Gui-devel >= 5.15.0
+BuildRequires:	Qt6Core-devel >= %{qt_ver}
+BuildRequires:	Qt6DBus-devel >= %{qt_ver}
+BuildRequires:	Qt6Gui-devel >= %{qt_ver}
+BuildRequires:	Qt6Qml-devel >= %{qt_ver}
+BuildRequires:	Qt6Quick-devel >= %{qt_ver}
+BuildRequires:	Qt6Sql-devel >= %{qt_ver}
+BuildRequires:	Qt6Widgets-devel >= %{qt_ver}
+BuildRequires:	boost-devel >= 1.49
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	gettext-devel
-BuildRequires:	kf6-extra-cmake-modules >= 5.82
-BuildRequires:	kf6-kauth-devel >= 5.82
-BuildRequires:	kf6-kcoreaddons-devel >= 5.85.0
-BuildRequires:	kf6-kdbusaddons-devel >= 5.82
-BuildRequires:	kf6-kdeclarative-devel >= 5.82
-BuildRequires:	kf6-ki18n-devel >= 5.82
-BuildRequires:	kf6-kio-devel >= 5.82
-BuildRequires:	kf6-knotifications-devel >= 5.82
-BuildRequires:	kf6-kservice-devel >= 5.85.0
-BuildRequires:	kf6-solid-devel >= 5.85.0
+BuildRequires:	kf6-extra-cmake-modules >= %{kf_ver}
+BuildRequires:	kf6-kconfig-devel >= %{kf_ver}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kf_ver}
+# C++20
+BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
@@ -49,7 +50,9 @@ Summary:	Header files for %{kpname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Obsoletes:	kp5-%{kpname}-devel < %{version}
+Requires:	Qt6Core-devel >= %{qt_ver}
+Requires:	libstdc++-devel >= 6:8
+Obsoletes:	kp5-plasma-activities < 6
 
 %description devel
 Header files for %{kpname} development.
