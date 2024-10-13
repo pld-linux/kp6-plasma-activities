@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libPlasmaActivities.so.*.*
 %ghost %{_libdir}/libPlasmaActivities.so.6
 %dir %{_libdir}/qt6/qml/org/kde/activities
-%attr(755,root,root)%{_libdir}/qt6/qml/org/kde/activities/libplasmaactivitiesextensionplugin.so
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/activities/libplasmaactivitiesextensionplugin.so
 %{_libdir}/qt6/qml/org/kde/activities/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/activities/plasmaactivitiesextensionplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/activities/qmldir
