@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.2.3
+%define		kdeplasmaver	6.2.4
 %define		qt_ver		6.7.0
 %define		kf_ver		6.5.0
 %define		kpname		plasma-activities
@@ -10,12 +10,12 @@
 Summary:	Plasma KActivities components
 Summary(pl.UTF-8):	Komponenty Plazmy KActivities
 Name:		kp6-%{kpname}
-Version:	6.2.3
+Version:	6.2.4
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	fb06ef191171a9604cbc047a35aababf
+# Source0-md5:	e5f30475eedf219b7b2018ea47f82789
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6DBus-devel >= %{qt_ver}
