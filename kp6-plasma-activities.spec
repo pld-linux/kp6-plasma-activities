@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.4.5
+%define		kdeplasmaver	6.5.0
 %define		qt_ver		6.7.0
 %define		kf_ver		6.5.0
 %define		kpname		plasma-activities
@@ -10,12 +10,12 @@
 Summary:	Plasma KActivities components
 Summary(pl.UTF-8):	Komponenty Plazmy KActivities
 Name:		kp6-%{kpname}
-Version:	6.4.5
-Release:	2
+Version:	6.5.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	b089072f6ccff393a53a744e47e02f20
+# Source0-md5:	0962fdfd6504c1ee6ea8109051fb1066
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6DBus-devel >= %{qt_ver}
@@ -88,10 +88,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/plasma-activities-cli6
-%attr(755,root,root) %{_libdir}/libPlasmaActivities.so.*.*
-%ghost %{_libdir}/libPlasmaActivities.so.6
+%{_libdir}/libPlasmaActivities.so.*.*
+%ghost %{_libdir}/libPlasmaActivities.so.7
 %dir %{_libdir}/qt6/qml/org/kde/activities
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/activities/libplasmaactivitiesextensionplugin.so
+%{_libdir}/qt6/qml/org/kde/activities/libplasmaactivitiesextensionplugin.so
 %{_libdir}/qt6/qml/org/kde/activities/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/activities/plasmaactivitiesextensionplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/activities/qmldir
